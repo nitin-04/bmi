@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #252422;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #000000;
+    text-decoration: underline;
+
+}
+
+.container {
+    background-color: #adc178;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    border: solid 2px;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 25px;
+    color: #000000;
+    text-decoration: solid;
+}
+
+table {
+    font-size: large;
+    border-spacing: 12px;
+
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #3498db;
+}
+
+button {
+    background-color: #626c66;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: all .4s ease-in-out;
+    transform: scale(1.2);
+    background-color: #000000;
+}
+
+#results {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.weight-guide {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.weight-guide h2 {
+    font-size: 20px;
+    margin-top: 44px;
+    color: #0f0e0e;
+}
+
+.weight-guide p {
+    font-size: 16px;
+    color: #232222;
+    margin-bottom: 5px;
+}
+
+.weight-guide p span {
+    font-weight: bolder;
+}
