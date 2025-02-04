@@ -1,30 +1,37 @@
-const forms = document.querySelector('form');
+const form = document.querySelector('form');
+const result = document.querySelector('#results');
 
-forms.addEventListener('submit', function (e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const hght = parseInt(document.querySelector('#height').value)
-    const wght = parseInt(document.querySelector('#weight').value)
-    const result = document.querySelector('#results')
+    // Get height and weight values
+    const height = parseFloat(document.querySelector('#height').value);
+    const weight = parseFloat(document.querySelector('#weight').value);
 
-    if (hght === '' || hght <= 0 || isNaN(hght)) {
-        result.innerHTML = "please give a valid height"
+    // Validate inputs
+    if (isNaN(height) || height <= 0) {
+        result.innerHTML = "Please provide a valid height.";
+        return;
+    } else if (isNaN(weight) || weight <= 0) {
+        result.innerHTML = "Please provide a valid weight.";
+        return;
     }
-    else if (wght === '' || wght <= 0 || isNaN(wght)) {
-        result.innerHTML = "please give a valid Weight"
+
+    // Calculate BMI
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+
+    // Determine BMI category
+    let message = `Your BMI is ${bmi}. `;
+    if (bmi <= 18.5) {
+        message += "You are underweight.";
+    } else if (bmi > 18.5 && bmi <= 24.9) {
+        message += "You have a normal weight.";
+    } else if (bmi >= 25 && bmi <= 29.9) {
+        message += "You are overweight.";
+    } else {
+        message += "You are obese.";
     }
-    else {
-        const bmi = (wght / ((hght * hght) / 10000)).toFixed(2);
-        let message = `Your BMI is ${bmi}.`;
-        if (bmi <= 18.5) {
-            message += "You are under-Weight"
-        }
-        else if (bmi > 18.5 && bmi <= 24.9) {
-            message += "You have a Normal Weight"
-        }
-        else {
-            message += "You are Over-Weight"
-        }
-        result.innerHTML = `<span>${message}</span>`;
-    }
+
+    // Display result
+    result.innerHTML = `<span>${message}</span>`;
 });
